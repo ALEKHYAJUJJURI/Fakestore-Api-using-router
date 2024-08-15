@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        class Product {
+            Rating = {
+                Hyd :{
+                    Vendor:{
+                        Ratings:{Rate:4.5,Reviews:5600}
+                    }
+                },
+                Pune :{
+                    Vendor:{
+                        Ratings:{Rate:4.2,Reviews:8700}
+                    }
+                }
+            }
+            
+            get HydRating(){
+                return this.Rating.Hyd.Vendor.Ratings.Reviews
+                
+            }
+            set HydRating(cityName){
+               this.Rating.Hyd.Vendor.Ratings.Reviews = cityName
+    
+            }
+        }
+        let obj = new Product();
+       <!-- obj.HydRating = prompt('Enter Reviews for HYD ') -->
+       document.write(`Hyd Ratings :  ${obj.HydRating}<br>`)
+
+
+
+
+       class Home{
+        constructor(){
+            document.write(`I'm a Constructor... <br>`)
+        }
+        Insert(){
+            document.write("Insert button clicked....")
+        }
+        Delete(){
+            document.write('Delete Button clicked....')
+        }
+        
+       }
+      
+       function insertClick(){
+        let abc = new Home;
+        abc.Insert();
+       }
+       function deleteClick(){
+        let abc = new Home;
+        abc.Delete();
+       }
+
+
+       class ConstructorDemo{
+        constructor(){
+            this.month 
+
+        }
+        get Month(){
+            return this.month
+        }
+       set Month(nam){
+            this.month=nam
+            document.write(`Month Clicked....<br>`)
+        }
+       }
+       let monObj = new ConstructorDemo()
+       monObj.Month = prompt('Enter Month')
+       document.write(`Month is -- ${monObj.Month}`)
+    </script> 
+    
+</head>
+<body>
+    <div>
+        <button onclick="insertClick()">Insert</button>
+        <button onclick="deleteClick()">Delete</button>
+        <button >Update</button>
+    </div>
+</body>
+</html>
