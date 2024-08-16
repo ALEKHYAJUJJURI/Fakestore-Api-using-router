@@ -29,7 +29,7 @@ export function HandleProducts(){
                              </div>   
                              <div className="card-footer"> 
                                 <span className="fs-3">{prod.price}</span><br/>
-                                <button className="btn btn-warning"> Add Cart</button>
+                                <button className="btn btn-warning"><Link to={`/page/${prod.id}`} className="bi bi-eye-fill"></Link></button>
                              </div>    
                         </div>
                     )

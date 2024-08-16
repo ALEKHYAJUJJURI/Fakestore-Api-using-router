@@ -3,6 +3,7 @@ import { BrowserRouter,Router,Route,Link, Routes } from "react-router-dom";
 import { HandeleCategories } from "./categories";
 import { HandleHome } from "./home";
 import { HandleProducts } from "./products";
+import { HandlePage } from "./page";
 export function RouteAPI(){
     
     return(
@@ -19,7 +20,14 @@ export function RouteAPI(){
                 </div>
                 <div className="h5 text-warning rounded py-2">
                     <span className="bi bi-search btn"></span>
-                    <span className="bi bi-cart btn"></span>
+                    <span className="bi bi-cart btn" data-bs-target="#moda" data-bs-toggle="modal"></span>
+                    <div className="modal fade" id='cart'>
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div>hello</div>
+                            </div>
+                        </div>
+                    </div>
                     <span className="bi bi-person-fill text-dark bg-warning rounded-circle btn"></span>
                 </div>
             </div>
@@ -30,6 +38,7 @@ export function RouteAPI(){
                 <Route path="home" element={<HandleHome/>} />
                 <Route path="categories" element={<HandeleCategories/>} />
                 <Route path="products/:item" element={<HandleProducts/>} />
+                <Route path="page/:id" element={<HandlePage/>}/>
                 <Route path="*" element={<h2>Not Found</h2>}/>
                </Routes>
             </section>
